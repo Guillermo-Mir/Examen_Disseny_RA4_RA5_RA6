@@ -1,0 +1,112 @@
+/* =========================================
+   1. ESTILOS BASE Y ESCRITORIO (Desktop)
+   ========================================= */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Clave para el menú móvil desplegable */
+}
+
+/* Contenedor del logo y menú principal */
+header > div:first-child nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 2rem; /* Separación entre el logo y los enlaces */
+}
+
+.ul-principal {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-principal a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.ul-principal a:hover,
+.ul-principal a.active {
+  color: #e3350d; /* Rojo estilo Pokémon */
+  font-weight: bold;
+}
+
+/* Ocultar el botón hamburguesa en pantallas grandes */
+.boto-hamburguesa {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* =========================================
+   2. ESTILOS MENÚ MÓVIL DESPLEGABLE
+   ========================================= */
+
+/* Apunta directamente al <nav> condicional que aparece con menuOpen */
+header > nav {
+  position: absolute;
+  top: 100%; /* Se coloca justo debajo del header */
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+header > nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header > nav li {
+  border-top: 1px solid #f0f0f0;
+}
+
+header > nav a {
+  display: block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+header > nav a:hover {
+  background-color: #f9f9f9;
+  color: #e3350d;
+}
+
+/* =========================================
+   3. RESPONSIVE (Móviles y Tablets pequeñas)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Ocultar la lista de enlaces principal */
+  .ul-principal {
+    display: none;
+  }
+
+  /* Mostrar el botón hamburguesa */
+  .boto-hamburguesa {
+    display: block;
+  }
+}

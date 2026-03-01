@@ -1,0 +1,8 @@
+/*CSS para hcer tres columnas*/
+picture{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
+  border: solid 5px black;
+  border-radius: 10px;
+}
