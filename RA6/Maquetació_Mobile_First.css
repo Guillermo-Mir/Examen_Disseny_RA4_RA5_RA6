@@ -1,0 +1,35 @@
+
+/*La regla d'or del Mobile First és: No s'utilitza max-width, 
+només s'utilitza min-width. El codi que escrius fora de qualsevol 
+@media és el del mòbil.*/
+
+
+/* 1. BASE: MÒBIL (ex: 375px) - Fora de media queries */
+.graella-productes {
+  display: flex;
+  flex-direction: column; /* 1 columna en mòbil */
+  gap: 1rem;
+  padding: 5%; /* Unitats relatives */
+  
+  .producte {
+    font-size: 1rem; /* Unitats relatives (rem) */
+  }
+}
+
+/* 2. BREAKPOINT: TABLET (min-width: 768px) */
+@media (min-width: 768px) {
+  .graella-productes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnes en tablet */
+    gap: 30px; /* Unitats fixes per a més espai en pantalles més grans */
+    padding: 2rem 5%; /* Més espai a les vores en tablet*/
+  }
+}
+
+/* 3. BREAKPOINT: DESKTOP (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .graella-productes {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnes en PC */
+    padding: 2rem 10%;
+  }
+}
